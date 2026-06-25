@@ -1,0 +1,66 @@
+# Repo metadata — do not link into $HOME
+^makefile$
+.gitmodules
+^assets/
+^wallpaper$
+^wallpaper/
+^\.stowrc$
+^\.stow-local-ignore$
+^README\.md$
+^plan\.md$
+^\.github$
+^\.gitignore$
+^\.gitattributes$
+(^|/)\.git(/|$)
+\.gitkeep$
+
+# macOS junk
+\.DS_Store
+^\.DS_Store$
+
+# Editor / IDE junk
+\.vscode
+\.idea
+\.fleet
+
+# Logs / runtime
+\.log$
+\.log/
+logs$
+logs/
+
+# Cache
+\.cache$
+\.cache/
+cache$
+cache/
+
+# Node ecosystem
+^node_modules$
+^node_modules/
+^yarn$
+^yarn/
+\.pnp.*
+\.npm
+\.parcel-cache
+
+# Python
+__pycache__
+\.pytest_cache
+\.mypy_cache
+\.venv
+venv
+
+# Misc binaries / downloads
+\.tmp
+tmp
+downloads
+dist
+build
+
+# Linter / formatter cache
+\.ruff_cache
+\.eslintcache
+\.stylelintcache
+\.turbo
+\.pyre
