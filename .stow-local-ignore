@@ -1,6 +1,6 @@
 # Repo metadata — do not link into $HOME
 ^makefile$
-.gitmodules
+^\.gitmodules$
 ^assets/
 ^wallpaper$
 ^wallpaper/
@@ -8,15 +8,20 @@
 ^\.stow-local-ignore$
 ^README\.md$
 ^plan\.md$
+^LICENSE$
+^LICENSE\.md$
 ^\.github$
 ^\.gitignore$
 ^\.gitattributes$
+^\.prettierignore$
+^\.shellcheckrc$
+^\.prettierrc$
+^\.prettierrc\.json$
 (^|/)\.git(/|$)
 \.gitkeep$
 
 # macOS junk
 \.DS_Store
-^\.DS_Store$
 
 # Editor / IDE junk
 \.vscode

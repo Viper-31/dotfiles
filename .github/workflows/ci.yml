@@ -1,0 +1,137 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-stow:
+    name: Validate Stow layout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install Stow
+        run: sudo apt-get update && sudo apt-get install -y stow
+      - name: Dry-run stow
+        run: |
+          set -euo pipefail
+          HOME_TEST="$RUNNER_TEMP/home"
+          mkdir -p "$HOME_TEST"
+          stow -n -v --target="$HOME_TEST" --dotfiles .
+
+  lint-lua:
+    name: Lint Lua Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Lua tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y luarocks
+          cargo install stylua
+
+      - name: Check Lua formatting with StyLua
+        run: |
+          stylua --check dot-config/nvim/ || echo "Lua formatting issues found"
+  format-yaml-json:
+    name: Check YAML & JSON formatting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+      - name: Prettier format check
+        run: npx prettier --check --no-error-on-unmatched-pattern "**/*.{yml,yaml,json}"
+  
+  lint-toml:
+    name: Lint TOML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Taplo
+        uses: uncenter/setup-taplo@v2
+        with:
+          version: "0.10.0"
+      - name: Validate & check formatting
+
+        run: |
+          set -euo pipefail
+          if find . -name "*.toml" -not -path "./.git/*" | grep -q .; then
+            taplo check
+            taplo fmt --check --diff
+          else
+            echo "No TOML files found, skipping"
+          fi
+    
+  lint-markdown:
+    name: Lint Markdown Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          globs: "**/*.md"
+          fix: false
+        continue-on-error: true
+
+  shellcheck:
+    name: Lint Shell Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Lint shell scripts
+        run: |
+          set -euo pipefail
+          find . -type f \( \
+            -name "*.sh" -o -name "*.bash" \
+            -o -name ".bashrc" -o -name ".bash_profile" -o -name ".profile" \
+            -o -name "dot-bashrc" -o -name "dot-bash_profile" \
+            -o -name "dot-profile" -o -name "dot-zshrc" -o -name "dot-zprofile" \
+            \) -not -path "./.git/*" -print0 | xargs -0 -r shellcheck --severity=warning
+
+  lint-fish:
+    name: Lint Fish Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install Fish
+        uses: fish-actions/install-fish@v1
+      - name: Syntax check
+        uses: fish-actions/syntax-check@v1
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       - name: Check for hardcoded secrets
+        run: |
+          echo "Scanning for potential secrets..."
+          grep -rn --include="*.sh" --include="*.zsh" --include=".zshrc" \
+            -E "(password|secret|api_key|token)[\s]*=[\s]*['\"][^'\"]+['\"]" . || echo "No hardcoded secrets found"
