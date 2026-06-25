@@ -11,7 +11,7 @@
 - lint yaml,json,toml - common configuration formats
 - lint-shell — for have bash and fish shell scripts
 - security-scan — gitleaks, cheap insurance
-7. Add linter config files as needed (.yamllint, .shellcheckrc)
+7. Add linter config files as needed 
 8. Commit. Run CI on the empty-ish repo to confirm the workflow itself is valid.
 
 ## Phase 3 — Migrate configs incrementally:
