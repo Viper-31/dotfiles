@@ -1,6 +1,3 @@
-HOME_DIR := $(HOME)
-VERBOSITY ?= 1
-
 .PHONY: help install stow unstow restow update-submodules
 
 .DEFAULT_GOAL := help
@@ -16,10 +13,21 @@ help:
 
 install: update-submodules stow
 	@echo ""
-	@echo "Done. Open tmux and press prefix-I to install plugins"
+	@echo "Done. Follow per-tool setup in README"
 	# other plugin init stuff
 
 stow:
 	@echo "--- Stowing dotfiles ---"
-	stow --target=$(HOME_DIR) --dotfiles --verbose=$(VERBOSITY)
-	
+	stow .
+
+unstow:
+	@echo "--- Unstowing dotfiles ---"
+	stow -D .
+
+restow:
+	unstow stow
+
+update-submodules:
+	@echo "--- Updating git submodules ---"
+	git submodule update --init --recursive
+	git submodule foreach --recursive 'git pull -ff-only 2>/dev/null || true'
