@@ -17,5 +17,9 @@ help:
 install: update-submodules stow
 	@echo ""
 	@echo "Done. Open tmux and press prefix-I to install plugins"
+	# other plugin init stuff
 
-
+stow:
+	@echo "--- Stowing dotfiles ---"
+	stow --target=$(HOME_DIR) --dotfiles --verbose=$(VERBOSITY)
+	
