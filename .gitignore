@@ -8,3 +8,8 @@
 # Tmux
 dot-config/tmux/plugins/*
 !dot-config/tmux/plugins/tpm
+
+# Fish
+dot-config/fish/config.local.fish
+dot-config/fish/fish_variables
+dot-config/fish/fish_history
