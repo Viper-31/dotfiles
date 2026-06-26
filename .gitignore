@@ -1,0 +1,10 @@
+# Duh
+.env
+.env.*
+*.key
+*.pem
+*.crt
+
+# Tmux
+dot-config/tmux/plugins/*
+!dot-config/tmux/plugins/tpm/
