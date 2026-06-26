@@ -69,3 +69,7 @@ build
 \.stylelintcache
 \.turbo
 \.pyre
+
+# Ignore Backup/Stale 
+^.*\.bak
+\.swp$
