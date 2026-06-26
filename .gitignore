@@ -13,3 +13,10 @@ dot-config/tmux/plugins/*
 dot-config/fish/config.local.fish
 dot-config/fish/fish_variables
 dot-config/fish/fish_history
+dot-config/fish/conf.d/*
+dot-config/fish/functions/*
+dot-config/fish/completions/*
+
+!dot-config/fish/functions/agent_load.fish
+!dot-config/fish/functions/rfnvim.fish
+!dot-config/fish/functions/cat.fish
