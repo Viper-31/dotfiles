@@ -20,3 +20,7 @@ dot-config/fish/completions/*
 !dot-config/fish/functions/agent_load.fish
 !dot-config/fish/functions/rfnvim.fish
 !dot-config/fish/functions/cat.fish
+
+# Zellij
+dot-config/zellij/plugins/*
+!dot-config/zellij/plugins/.gitkeep
