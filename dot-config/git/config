@@ -1,0 +1,10 @@
+[user]
+	name = JohnC
+	email = 108507081+Viper-31@users.noreply.github.com
+[core]
+	autocrlf = input
+
+[includeIf "gitdir:/mnt/**"]
+	path = ~/.config/git/config-windows
+[init]
+	defaultBranch = main
