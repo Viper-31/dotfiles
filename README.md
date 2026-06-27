@@ -8,9 +8,9 @@ Install via appropriate package manager, ideally get latest version:
 - [`stow`](https://github.com/aspiers/stow)
 - [`tmux`](https://github.com/tmux/tmux)
 - [`fish` (3.6+)](https://github.com/fish-shell/fish-shell)
-- [nvim](https://github.com/neovim/neovim)
-- [zellij](https://github.com/zellij-org/zellij)
-- [fzf](https://github.com/junegunn/fzf)
+- [`nvim`](https://github.com/neovim/neovim)
+- [`zellij`](https://github.com/zellij-org/zellij)
+- [`fzf`](https://github.com/junegunn/fzf)
 
 
 ## New device setup
