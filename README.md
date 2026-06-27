@@ -43,3 +43,11 @@ Updating
 cd ~/dotfiles
 make update-submodules    # refresh tpm
 make restow               # re-link any new/changed files
+
+
+### Zellij (zjstatus plugin)
+Download the plugin into the plugins dir (one-time):
+```fish
+curl -fL -o ~/dotfiles/dot-config/zellij/plugins/zjstatus.wasm \
+  https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm
+```
