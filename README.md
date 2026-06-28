@@ -12,6 +12,9 @@ Install via appropriate package manager, ideally get latest version:
 - [`nvim`](https://github.com/neovim/neovim)
 - [`zellij`](https://github.com/zellij-org/zellij)
 - [`fzf`](https://github.com/junegunn/fzf)
+- [`bat`](github.com/sharkdp/bat)
+- [`eza`](https://github.com/eza-community/eza)
+- [`fd`](https://github.com/sharkdp/fd)
 
 ## New device setup
 
@@ -23,6 +26,8 @@ make install
 ```
 
 make install deploys symlinks and initializes submodules in this repo. **It does not** install plugins — see below.
+
+Run `make install` (which stows) **before** launching the relevant tool on a fresh machine. Otherwise, the tool may auto-create a default config on first start.
 
 ## Per-tool setup
 

@@ -17,6 +17,7 @@ dot-config/fish/conf.d/*
 dot-config/fish/functions/*
 dot-config/fish/completions/*
 
+!dot-config/fish/functions/eza.fish
 !dot-config/fish/functions/agent_load.fish
 !dot-config/fish/functions/rfnvim.fish
 !dot-config/fish/functions/cat.fish
