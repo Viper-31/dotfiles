@@ -12,6 +12,8 @@ Install via appropriate package manager, ideally get latest version:
 - [`nvim`](https://github.com/neovim/neovim)
 - [`zellij`](https://github.com/zellij-org/zellij)
 - [`fzf`](https://github.com/junegunn/fzf)
+- [`bat`](github.com/sharkdp/bat)
+- [`fd`](https://github.com/sharkdp/fd)
 
 ## New device setup
 

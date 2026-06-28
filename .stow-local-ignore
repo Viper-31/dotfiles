@@ -17,6 +17,7 @@
 ^\.shellcheckrc$
 ^\.prettierrc$
 ^\.prettierrc\.json$
+^\.markdownlint-cli2.jsonc$
 (^|/)\.git(/|$)
 \.gitkeep$
 
