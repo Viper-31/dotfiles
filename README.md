@@ -45,7 +45,7 @@ $EDITOR ~/.config/fish/config.local.fisher
 
 Open tmux, press prefix + I. Installs tpm
 
-```
+```fish
 cd ~/dotfiles
 make update-submodules # refresh tpm
 make restow # re-link any new/changed files
