@@ -1,1 +1,4 @@
 .git/
+dot-config/tmux/plugins/tpm/
+
+node_modules/
