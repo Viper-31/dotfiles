@@ -11,7 +11,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-
 jobs:
   validate-stow:
     name: Validate Stow layout
@@ -44,7 +43,7 @@ jobs:
 
       - name: Prettier format check
         run: npx prettier --check --no-error-on-unmatched-pattern "**/*.{yml,yaml,json}"
-  
+
   lint-toml:
     name: Lint TOML
     runs-on: ubuntu-latest
@@ -62,7 +61,7 @@ jobs:
           set -euo pipefail
           taplo check
           taplo fmt --check
-    
+
   lint-markdown:
     name: Lint Markdown Files
     runs-on: ubuntu-latest
@@ -75,8 +74,7 @@ jobs:
         with:
           globs: "**/*.md"
           fix: false
-        continue-on-error: true
-
+        continue-on-error: false
 
   lint-lua:
     name: Lint Lua Files
@@ -113,10 +111,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      
+
       - name: Install Fish
         uses: fish-actions/install-fish@v1
-      
+
       - name: Syntax check
         uses: fish-actions/syntax-check@v1
 
@@ -133,11 +131,11 @@ jobs:
         uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       
+
       - name: Check for hardcoded secrets
         run: |
           echo "Scanning for potential secrets..."
-          
+
           if grep -rn --include="*.sh" --include="*.zsh" --include=".zshrc" \
             -E "(password|secret|api_key|token)[\s]*=[\s]*['\"][^'\"]+['\"]" .; then
             echo "❌ ::error:: Hardcoded secrets detected. Review matches and remove."
