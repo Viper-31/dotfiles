@@ -25,7 +25,7 @@ cd ~/dotfiles
 make install
 ```
 
-make install deploys symlinks and initializes submodules in this repo. **It does not** install plugins — see below. 
+make install deploys symlinks and initializes submodules in this repo. **It does not** install plugins — see below.
 
 Run `make install` (which stows) **before** launching the relevant tool on a fresh machine. Otherwise, the tool may auto-create a default config on first start.
 
