@@ -40,8 +40,5 @@ map("n", "<C-Down>", "<C-w>j", { desc = "Switch to lower window split" })
 map("v", "[", "<gv", { desc = "Un-indent text keeping selection" })
 map("v", "]", ">gv", { desc = "Indent text keeping selection" })
 
--- Clear search highlights on pressing Escape
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear search highlight" })
-
 -- Lazygit
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Git Open LazyGit Window" })
