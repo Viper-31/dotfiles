@@ -25,6 +25,21 @@ return {
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
+  
+  {
+    "kdheepak/lazygit.nvim",
+    lazy=true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+  }, 
 
   {
     "neovim/nvim-lspconfig",
