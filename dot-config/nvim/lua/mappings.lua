@@ -42,3 +42,8 @@ map("v", "]", ">gv", { desc = "Indent text keeping selection" })
 
 -- Lazygit
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Git Open LazyGit Window" })
+
+-- Terminal toggle (defaults A-h, A-v, A-i still available)
+map({ "n", "t" }, "<C-`>", function()
+  require("nvchad.term").toggle { pos = "sp", id = "horizontalToggleTerm"}
+end, { desc = "Toggle terminal horizontal" })
