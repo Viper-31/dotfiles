@@ -4,3 +4,4 @@ local opt = vim.opt
 
 opt.shell = "/usr/bin/fish"
 opt.undofile = true
+opt.relativenumber = true
