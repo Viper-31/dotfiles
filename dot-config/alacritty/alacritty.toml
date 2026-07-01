@@ -1,6 +1,4 @@
-general.import = [
-  "catppuccin-mocha.toml"
-]
+general.import = ["catppuccin-mocha.toml"]
 
 [terminal.shell]
 program = "wsl.exe"
@@ -17,12 +15,12 @@ size = 11.5
 
 [font.normal]
 #JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font
-family = "CaskaydiaCove Nerd Font" 
+family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
 # --- Scrolling (important for logs / pipelines) ---
 [scrolling]
-history = 100000        # large buffer for logs
+history = 100000 # large buffer for logs
 multiplier = 3
 
 # --- Cursor turn off blinking ---
@@ -41,16 +39,16 @@ TERM = "xterm-256color"
 [keyboard]
 
 bindings = [
-  { key= "Return", mods= "Shift", chars="\n"},
+  { key = "Return", mods = "Shift", chars = "\n" },
   { key = "V", mods = "Control|Shift", action = "Paste" },
   { key = "C", mods = "Control|Shift", action = "Copy" },
   { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
   { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
   { key = "K", mods = "Control|Shift", chars = "\u000c" },
-  
+
   # --- FIX FOR SHIFT + ARROW SELECTION IN NVIM / WSL ---
   { key = "Up", mods = "Shift", chars = "\u001b[1;2A" },
   { key = "Down", mods = "Shift", chars = "\u001b[1;2B" },
   { key = "Left", mods = "Shift", chars = "\u001b[1;2D" },
-  { key = "Right", mods = "Shift", chars = "\u001b[1;2C" }
+  { key = "Right", mods = "Shift", chars = "\u001b[1;2C" },
 ]
