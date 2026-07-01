@@ -14,6 +14,7 @@ local options = {
     toml = { "taplo" },
     svelte = { "prettier" },
     sql = { "sqlfluff" },
+    kdl = { "kdlfmt" },
   },
 
   format_on_save = {
