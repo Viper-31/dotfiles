@@ -29,6 +29,10 @@ make install deploys symlinks and initializes submodules in this repo. **It does
 
 Run `make install` (which stows) **before** launching the relevant tool on a fresh machine. Otherwise, the tool may auto-create a default config on first start.
 
+## Adding a new dotfile
+
+Use following stow sequence to prevent top-level artifacts in $HOME
+ 
 ## Per-tool setup
 
 ### Fisher plugin manager:
