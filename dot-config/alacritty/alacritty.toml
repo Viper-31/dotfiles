@@ -1,0 +1,54 @@
+general.import = ["catppuccin-mocha.toml"]
+
+[terminal.shell]
+program = "wsl.exe"
+args = ["-d", "Ubuntu"]
+
+[window]
+opacity = 0.90
+padding = { x = 6, y = 6 }
+dynamic_padding = true
+decorations = "full"
+
+[font]
+size = 11.5
+
+[font.normal]
+#JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font
+family = "CaskaydiaCove Nerd Font"
+style = "Regular"
+
+# --- Scrolling (important for logs / pipelines) ---
+[scrolling]
+history = 100000 # large buffer for logs
+multiplier = 3
+
+# --- Cursor turn off blinking ---
+[cursor]
+style = { blinking = "Off" }
+
+# --- Selection ---
+[selection]
+save_to_clipboard = true
+
+# Fix from (https://github.com/catppuccin/alacritty)
+[env]
+TERM = "xterm-256color"
+
+# --- Keybindings (quality-of-life) ---
+[keyboard]
+
+bindings = [
+  { key = "Return", mods = "Shift", chars = "\n" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+  { key = "K", mods = "Control|Shift", chars = "\u000c" },
+
+  # --- FIX FOR SHIFT + ARROW SELECTION IN NVIM / WSL ---
+  { key = "Up", mods = "Shift", chars = "\u001b[1;2A" },
+  { key = "Down", mods = "Shift", chars = "\u001b[1;2B" },
+  { key = "Left", mods = "Shift", chars = "\u001b[1;2D" },
+  { key = "Right", mods = "Shift", chars = "\u001b[1;2C" },
+]

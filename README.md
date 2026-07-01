@@ -29,6 +29,29 @@ make install deploys symlinks and initializes submodules in this repo. **It does
 
 Run `make install` (which stows) **before** launching the relevant tool on a fresh machine. Otherwise, the tool may auto-create a default config on first start.
 
+## Adding a new dotfile
+
+Use following stow sequence to prevent top-level artifacts in $HOME
+
+**From `~/.config/`**
+
+```fish
+mv ~/.config/<app> ~/dotfiles/dot-config/<app>
+cd ~/dotfiles
+make stow-config
+```
+
+**From `$HOME`**:
+
+```fish
+# The dot- prefix is required — stow's --dotfiles strips it at link time
+mv ~/.somefile ~/dotfiles/dot-somefile
+cd ~/dotfiles
+make stow-home
+```
+
+> After running `make stow-config`, verify with `readlink -f ~/.config/<app>` — it should resolve to `~/dotfiles/dot-config/<app>`.
+
 ## Per-tool setup
 
 ### Fisher plugin manager:

@@ -20,6 +20,7 @@
 ^\.markdownlint-cli2.jsonc$
 (^|/)\.git(/|$)
 \.gitkeep$
+^dot-config/
 
 # macOS junk
 \.DS_Store
