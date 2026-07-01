@@ -1,10 +1,5 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
-vim.opt.shell = "usr/bin/fish"
 vim.g.mapleader = " "
-vim.opt.undofile = true
-
-vim.wo.number = true
-vim.wo.relativenumber = true
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"

@@ -8,8 +8,13 @@ M.base46 = {
   theme = "tokyodark",
   transparency = false,
 }
--- M.nvdash = { load_on_startup = true }
--- M.ui = {}
 
-vim.opt.hidden = true
+M.ui = {
+  statusline = {
+    theme = "default",
+    separator_style = "round",
+  },
+}
+
+-- M.nvdash = { load_on_startup = true }
 return M
