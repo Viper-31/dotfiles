@@ -13,7 +13,11 @@ nomap("n", "<leader>ch")
 map("n", "<leader>cs", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
 ----------------------------------------------------------------------------
------ Move current line up or down in normal mode (Alt + j/k)
+-- Replace C-b with C-a for beginning of line in insert mode
+nomap("i", "<C-b>")
+map("i", "<C-a>", "<Esc>^i", { desc = "Go to beginning of line" })
+
+-- Move current line up or down in normal mode (Alt + j/k)
 map("n", "<A-j>", ":m .+1<CR>==", { silent = true, desc = "Move line down" })
 map("n", "<A-k>", ":m .-2<CR>==", { silent = true, desc = "Move line up" })
 
@@ -49,3 +53,5 @@ map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Git Open LazyGit Window" })
 map({ "n", "t" }, "<C-`>", function()
   require("nvchad.term").toggle { pos = "sp", id = "horizontalToggleTerm"}
 end, { desc = "Toggle terminal horizontal" })
+
+-- TODO: Bind smth - c to check w/ formatter. - w to write with formatter
