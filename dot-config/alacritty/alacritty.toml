@@ -14,7 +14,7 @@ decorations = "full"
 size = 11.5
 
 [font.normal]
-#JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font
+# JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font
 family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
