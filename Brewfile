@@ -15,6 +15,7 @@ brew "zoxide"
 brew "lazygit"
 brew "tlrc"
 brew "jq"
+brew "go-task"
 
 # Extras
 brew "tree-sitter"
