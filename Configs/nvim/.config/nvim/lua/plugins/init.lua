@@ -82,8 +82,8 @@ return {
     "rmagatti/auto-session",
     lazy = false, -- False to run immediately when Neovim opens
     opts = {
-      auto_restore_enabled = true,
-      auto_save_enabled = true,
+      auto_restore = true,
+      auto_save = true,
       suppressed_dirs = { "~/", "~/Downloads", "/", "/tmp" },
 
       -- Prevents NvimTree from breaking or duplicating during session restore
