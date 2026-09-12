@@ -60,6 +60,10 @@ Layout: `Configs/<group>/.config/<app>/` for XDG apps, `Configs/<group>/` for ho
 
 Git is configured to use `delta` as its pager. It is installed via the Brewfile (`make cli-tools`); the brew binary wins on `PATH`.
 
+### Global gitignore
+
+A global ignore for OS/editor cruft ships at `Configs/git/.config/git/ignore`. `make deploy` symlinks it to `~/.config/git/ignore`, which Git reads automatically ([XDG default](https://docs.github.com/en/get-started/git-basics/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer)).
+
 ### Fisher plugin manager:
 
 ```fish

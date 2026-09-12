@@ -26,3 +26,6 @@ Configs/fish/.config/fish/completions/*
 # Zellij
 Configs/zellij/.config/zellij/plugins/*
 !Configs/zellij/.config/zellij/plugins/.gitkeep
+
+# macOS
+.DS_Store

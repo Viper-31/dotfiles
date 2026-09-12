@@ -1,0 +1,30 @@
+# Global gitignore — symlinked to ~/.config/git/ignore by Tuckr.
+# Git reads this path automatically (XDG default)
+# https://docs.github.com/en/get-started/git-basics/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Editors
+*.swp
+*.swo
+.idea/
+.vscode/
