@@ -27,5 +27,5 @@ Configs/fish/.config/fish/completions/*
 Configs/zellij/.config/zellij/plugins/*
 !Configs/zellij/.config/zellij/plugins/.gitkeep
 
-# macOS (belt-and-braces; primary ignore is ~/.config/git/ignore)
+# macOS
 .DS_Store

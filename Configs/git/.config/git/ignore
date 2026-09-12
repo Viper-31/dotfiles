@@ -1,6 +1,5 @@
 # Global gitignore — symlinked to ~/.config/git/ignore by Tuckr.
-# Git reads this path automatically (XDG default); no core.excludesfile
-# entry is needed. See:
+# Git reads this path automatically (XDG default)
 # https://docs.github.com/en/get-started/git-basics/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer
 
 # macOS
