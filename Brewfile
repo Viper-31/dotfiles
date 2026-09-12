@@ -20,3 +20,6 @@ brew "go-task"
 # Extras
 brew "tree-sitter"
 brew "cargo-cache"
+
+# Fonts
+cask "font-caskaydia-cove-nerd-font"
